@@ -6,15 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | 春暖花开</title>
+  <title>yilia主题常用配置 | 春暖花开</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="春暖花开">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="摘要：介绍hexo中yilia主题的一些常用配置，包括头像设置、所有文章、微信分享功能等等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="yilia主题常用配置">
+<meta property="og:url" content="http://yoursite.com/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="春暖花开">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="摘要：介绍hexo中yilia主题的一些常用配置，包括头像设置、所有文章、微信分享功能等等。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/1581841215171.png">
+<meta property="article:published_time" content="2020-02-16T07:27:08.000Z">
+<meta property="article:modified_time" content="2020-02-16T08:33:30.190Z">
 <meta property="article:author" content="随风而行">
 <meta property="article:tag" content="前端博客，后端博客，java">
 <meta property="article:tag" content="vue.js">
@@ -23,6 +26,7 @@
 <meta property="article:tag" content="springboot">
 <meta property="article:tag" content="springcloud">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/1581841215171.png">
   
     <link rel="alternative" href="/atom.xml" title="春暖花开" type="application/atom+xml">
   
@@ -208,238 +212,284 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-yilia主题常用配置" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      yilia主题常用配置
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+
+		<!--显示阅读次数-->
+			
+			  <br/>
+			  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+			  <span class="icon-sort"></span>
+			  <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+						阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+			  </span>
+			  </a>
+			
+		<!--显示阅读次数完毕-->
+        
+        <a href="/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/" class="archive-article-date">
   	<time datetime="2020-02-16T07:27:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">yilia主题常用配置</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要：介绍hexo中yilia主题的一些常用配置，包括头像设置、所有文章、微信分享功能等等。</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<h2 id="一、“所有文章”按钮的安装"><a href="#一、“所有文章”按钮的安装" class="headerlink" title="一、“所有文章”按钮的安装"></a>一、“所有文章”按钮的安装</h2><ul>
+<li><p>1.首先使用命令 <code>node -v</code> 检查版本是不是大于 6.2 </p>
+</li>
+<li><p>2.在博客根目录执行以下命令： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-generator-json-content --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.在博客配置文件 <code>_config.yml</code> 最下面加上： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">jsonContent:</span><br><span class="line">  meta: false</span><br><span class="line">  pages: false</span><br><span class="line">  posts:</span><br><span class="line">    title: true</span><br><span class="line">    date: true</span><br><span class="line">    path: true</span><br><span class="line">    text: false</span><br><span class="line">    raw: false</span><br><span class="line">    content: false</span><br><span class="line">    slug: false</span><br><span class="line">    updated: false</span><br><span class="line">    comments: false</span><br><span class="line">    link: false</span><br><span class="line">    permalink: false</span><br><span class="line">    excerpt: false</span><br><span class="line">    categories: false</span><br><span class="line">    tags: true</span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
+<h2 id="二、添加图片资源文件夹"><a href="#二、添加图片资源文件夹" class="headerlink" title="二、添加图片资源文件夹"></a>二、添加图片资源文件夹</h2><ul>
+<li><p>1.路径为 <code>themes/yilia/source/</code> 下，可添加一个 <code>assets</code> 文件夹，里面存放图片资源即可 。</p>
+</li>
+<li><p>2.在 <code>themes/yilia/_config.yml</code> 里添加头像或者微信/支付宝二维码图片 ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 微信二维码图片</span><br><span class="line">weixin:  &#x2F;assets&#x2F;img&#x2F;wechat.png</span><br><span class="line"></span><br><span class="line"># 头像图片</span><br><span class="line">avatar:  &#x2F;assets&#x2F;img&#x2F;head.jpg</span><br><span class="line"></span><br><span class="line"># 网页图标</span><br><span class="line">favicon:  &#x2F;assets&#x2F;img&#x2F;head.jpg</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="三、文章显示摘要"><a href="#三、文章显示摘要" class="headerlink" title="三、文章显示摘要"></a>三、文章显示摘要</h2><ul>
+<li><p>1.注释掉文件 <code>themes/yilia/_config.yml</code> 里的 ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># excerpt_link: more</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.在你 MD 格式文章正文插入 <code>&lt;!-- more --&gt;</code> 即可，只会显示它之前的，此后的就不显示，点击文章标题，全文阅读才可看到 。</p>
+</li>
+</ul>
+<h2 id="四、文章显示目录"><a href="#四、文章显示目录" class="headerlink" title="四、文章显示目录"></a>四、文章显示目录</h2><ul>
+<li><p>1.在 <code>themes/yilia/_config.yml</code> 中进行配置 <code>toc: 2</code> 即可 。</p>
+</li>
+<li><p>2.会在博客页面右下角显示目录：</p>
+<p><img src="/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/1581841215171.png" alt="1581841215171"></p>
+</li>
+</ul>
+<p>##五、增加归档菜单</p>
+<ul>
+<li><p>1.修改 <code>themes/yilia/_config.yml</code> 内容： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">    主页:  &#x2F;</span><br><span class="line">    归档:  &#x2F;archives&#x2F;index.html</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="六、修复失效的微信分享二维码"><a href="#六、修复失效的微信分享二维码" class="headerlink" title="六、修复失效的微信分享二维码"></a>六、修复失效的微信分享二维码</h2><ul>
+<li><p>1.因为百度网盘取消了生成二维码的功能。</p>
+<p>解决办法是将themes\yilia\layout_partial\post\share.ejs 文件中的 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;pan.baidu.com&#x2F;share&#x2F;qrcode?url&#x3D;</span><br></pre></td></tr></table></figure>
+
+<p>修改为，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;api.qrserver.com&#x2F;v1&#x2F;create-qr-code&#x2F;?size&#x3D;150x150&amp;data&#x3D;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.微信二维码显示正常，但是分享时找不到该网址。</p>
+<p>解决方法是在themes\yilia\layout_partial\post\share.ejs 文件中的 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var sUrl &#x3D; url.replace(&#x2F;index\.html$&#x2F;, &#39;&#39;);</span><br><span class="line">  sUrl &#x3D; &#x2F;^(http:|https:)\&#x2F;\&#x2F;&#x2F;.test(sUrl) ? sUrl : &#39;http:&#39; + sUrl;</span><br></pre></td></tr></table></figure>
+
+<p>下面加一行（这里的20是根据自己网址长度计算得到的）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test&#x3D;sUrl.substring(20);</span><br></pre></td></tr></table></figure>
+
+<p>然后变成，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">  var sUrl &#x3D; url.replace(&#x2F;index\.html$&#x2F;, &#39;&#39;);</span><br><span class="line">  sUrl &#x3D; &#x2F;^(http:|https:)\&#x2F;\&#x2F;&#x2F;.test(sUrl) ? sUrl : &#39;http:&#39; + sUrl;</span><br><span class="line">  test&#x3D;sUrl.substring(20);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后将之前的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;&#x2F;&#x2F;api.qrserver.com&#x2F;v1&#x2F;create-qr-code&#x2F;?size&#x3D;150x150&amp;data&#x3D;&#39; + sUrl</span><br></pre></td></tr></table></figure>
+
+<p>改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;&#x2F;&#x2F;api.qrserver.com&#x2F;v1&#x2F;create-qr-code&#x2F;?size&#x3D;150x150&amp;data&#x3D;你的主页网址&#39; + test</span><br></pre></td></tr></table></figure>
+
+<p>举例，我的网址是（wkzqn.github.io）那么就改为： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;page-modal wx-share js-wx-box&quot;&gt;</span><br><span class="line">    &lt;a class&#x3D;&quot;close js-modal-close&quot; href&#x3D;&quot;javascript:;&quot;&gt;&lt;i class&#x3D;&quot;icon icon-close&quot;&gt;&lt;&#x2F;i&gt;&lt;&#x2F;a&gt;</span><br><span class="line">    &lt;p&gt;扫一扫，分享到微信&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;wx-qrcode&quot;&gt;</span><br><span class="line">      &lt;img src&#x3D;&quot;&lt;%- &#39;qrcode&#39; in locals ? qrcode(sUrl) : &#39;&#x2F;&#x2F;api.qrserver.com&#x2F;v1&#x2F;create-qr-code&#x2F;?size&#x3D;150x150&amp;data&#x3D;http:&#x2F;&#x2F;wkzqn.github.io&#x2F;&#39; + test  %&gt;&quot; alt&#x3D;&quot;微信分享二维码&quot;&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>##七、左侧显示总文章数</p>
+<ul>
+<li><p>1.打开 <code>themes\yilia\layout\_partial\left-col.ejs</code> 文件 ，在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;nav class&#x3D;&quot;header-menu&quot;&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">    &lt;% for (var i in theme.menu)&#123; %&gt;</span><br><span class="line">        &lt;li&gt;&lt;a href&#x3D;&quot;&lt;%- url_for(theme.menu[i]) %&gt;&quot;&gt;&lt;%&#x3D; i %&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;%&#125;%&gt;</span><br><span class="line">    &lt;&#x2F;ul&gt;</span><br><span class="line">&lt;&#x2F;nav&gt;</span><br></pre></td></tr></table></figure>
+
+<p>后面添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;nav&gt;</span><br><span class="line">    总文章数 &lt;%&#x3D;site.posts.length%&gt;</span><br><span class="line">&lt;&#x2F;nav&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="八、增加不蒜子统计"><a href="#八、增加不蒜子统计" class="headerlink" title="八、增加不蒜子统计"></a>八、增加不蒜子统计</h2></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://wkzqn.github.io/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/16/hexo+yilia%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81%E5%9D%97%E5%A4%8D%E8%AF%95%E5%8A%9F%E8%83%BD/" class="archive-article-date">
-  	<time datetime="2020-02-16T07:00:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/16/hexo+yilia%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81%E5%9D%97%E5%A4%8D%E8%AF%95%E5%8A%9F%E8%83%BD/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo+yilia实现代码块复试功能</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/hexo+yilia%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81%E5%9D%97%E5%A4%8D%E8%AF%95%E5%8A%9F%E8%83%BD/">hexo+yilia实现代码块复试功能</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、“所有文章”按钮的安装"><span class="toc-number">1.</span> <span class="toc-text">一、“所有文章”按钮的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、添加图片资源文件夹"><span class="toc-number">2.</span> <span class="toc-text">二、添加图片资源文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、文章显示摘要"><span class="toc-number">3.</span> <span class="toc-text">三、文章显示摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、文章显示目录"><span class="toc-number">4.</span> <span class="toc-text">四、文章显示目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、修复失效的微信分享二维码"><span class="toc-number">5.</span> <span class="toc-text">六、修复失效的微信分享二维码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、增加不蒜子统计"><span class="toc-number">6.</span> <span class="toc-text">八、增加不蒜子统计</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/16/%E6%B5%8B%E8%AF%95/" class="archive-article-date">
-  	<time datetime="2020-02-16T06:51:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/%E6%B5%8B%E8%AF%95/">测试</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E5%A4%A9%E6%B0%94%E6%8F%92%E4%BB%B6/" class="archive-article-date">
-  	<time datetime="2020-02-16T06:31:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E5%A4%A9%E6%B0%94%E6%8F%92%E4%BB%B6/">yilia主题添加天气插件</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0utteranc%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
-  	<time datetime="2020-02-16T06:09:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0utteranc%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">yilia主题添加utteranc评论系统</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/16/typora%E7%BC%96%E5%86%99hexo%E5%8D%9A%E5%AE%A2%E6%97%B6%E7%9A%84%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" class="archive-article-date">
-  	<time datetime="2020-02-16T05:45:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/typora%E7%BC%96%E5%86%99hexo%E5%8D%9A%E5%AE%A2%E6%97%B6%E7%9A%84%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/">typora编写hexo博客时的图片显示</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/15/%E5%88%A9%E7%94%A8hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" class="archive-article-date">
-  	<time datetime="2020-02-15T12:56:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/%E5%88%A9%E7%94%A8hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">利用hexo+github搭建个人博客网站</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/14/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-14T08:04:46.917Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/14/hello-world/">Hello World</a>
-    </h1>
-  
+<!-- 《utteranc评论：基于github issue的评论系统 -->
 
-        <div class="article-info info-on-right">
-          
-          
+	
+		<section id="comments" class="comments">
+		  <style>
+			.utterances{max-width: 100%;}
+		  </style>
+			<script src="https://utteranc.es/client.js"
+					repo="wkzqn/wkzqn.github.io"
+					issue-term="title"
+					theme="github-light"
+					crossorigin="anonymous"
+					async>
+			</script>
+	  </section>
+	
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+<!-- utteranc评论》 -->
 
-    
 
 
           </div>
@@ -462,8 +512,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
