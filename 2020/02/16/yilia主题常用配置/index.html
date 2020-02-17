@@ -17,7 +17,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/1581841215171.png">
 <meta property="article:published_time" content="2020-02-16T07:27:08.000Z">
-<meta property="article:modified_time" content="2020-02-16T12:58:11.793Z">
+<meta property="article:modified_time" content="2020-02-17T08:21:57.136Z">
 <meta property="article:author" content="随风而行">
 <meta property="article:tag" content="yilia">
 <meta name="twitter:card" content="summary">
@@ -276,8 +276,7 @@
 <p><img src="/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/1581841215171.png" alt="1581841215171"></p>
 </li>
 </ul>
-<p>##五、增加归档菜单</p>
-<ul>
+<h2 id="五、增加归档菜单"><a href="#五、增加归档菜单" class="headerlink" title="五、增加归档菜单"></a>五、增加归档菜单</h2><ul>
 <li><p>1.修改 <code>themes/yilia/_config.yml</code> 内容： </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">    主页:  &#x2F;</span><br><span class="line">    归档:  &#x2F;archives&#x2F;index.html</span><br></pre></td></tr></table></figure>
 
@@ -312,8 +311,7 @@
 
 </li>
 </ul>
-<p>##七、左侧显示总文章数</p>
-<ul>
+<h2 id="七、左侧显示总文章数"><a href="#七、左侧显示总文章数" class="headerlink" title="七、左侧显示总文章数"></a>七、左侧显示总文章数</h2><ul>
 <li><p>1.打开 <code>themes\yilia\layout\_partial\left-col.ejs</code> 文件 ，在</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;nav class&#x3D;&quot;header-menu&quot;&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">    &lt;% for (var i in theme.menu)&#123; %&gt;</span><br><span class="line">        &lt;li&gt;&lt;a href&#x3D;&quot;&lt;%- url_for(theme.menu[i]) %&gt;&quot;&gt;&lt;%&#x3D; i %&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;%&#125;%&gt;</span><br><span class="line">    &lt;&#x2F;ul&gt;</span><br><span class="line">&lt;&#x2F;nav&gt;</span><br></pre></td></tr></table></figure>
 
@@ -483,7 +481,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、“所有文章”按钮的安装"><span class="toc-number">1.</span> <span class="toc-text">一、“所有文章”按钮的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、添加图片资源文件夹"><span class="toc-number">2.</span> <span class="toc-text">二、添加图片资源文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、文章显示摘要"><span class="toc-number">3.</span> <span class="toc-text">三、文章显示摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、文章显示目录"><span class="toc-number">4.</span> <span class="toc-text">四、文章显示目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、修复失效的微信分享二维码"><span class="toc-number">5.</span> <span class="toc-text">六、修复失效的微信分享二维码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、参考文献"><span class="toc-number">6.</span> <span class="toc-text">八、参考文献</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、“所有文章”按钮的安装"><span class="toc-number">1.</span> <span class="toc-text">一、“所有文章”按钮的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、添加图片资源文件夹"><span class="toc-number">2.</span> <span class="toc-text">二、添加图片资源文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、文章显示摘要"><span class="toc-number">3.</span> <span class="toc-text">三、文章显示摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、文章显示目录"><span class="toc-number">4.</span> <span class="toc-text">四、文章显示目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、增加归档菜单"><span class="toc-number">5.</span> <span class="toc-text">五、增加归档菜单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、修复失效的微信分享二维码"><span class="toc-number">6.</span> <span class="toc-text">六、修复失效的微信分享二维码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、左侧显示总文章数"><span class="toc-number">7.</span> <span class="toc-text">七、左侧显示总文章数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、参考文献"><span class="toc-number">8.</span> <span class="toc-text">八、参考文献</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -620,19 +618,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">others</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">typora</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -644,11 +634,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">typora</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">others</a>
               </li>
             
             <div class="clearfix"></div>
