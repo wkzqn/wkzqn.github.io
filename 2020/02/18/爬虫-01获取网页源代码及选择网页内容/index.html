@@ -6,23 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Category: 个人博客 | 随风而行的个人博客</title>
+  <title>爬虫_01获取网页源代码及选择网页内容 | 随风而行的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="随风而行的个人博客">
-<meta property="og:url" content="http://yoursite.com/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
+  <meta name="description" content="摘要：利用urlopen来获取网页源代码，以及用regex正则表达式这种原始的方法来提取网页内容。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="爬虫_01获取网页源代码及选择网页内容">
+<meta property="og:url" content="http://yoursite.com/2020/02/18/%E7%88%AC%E8%99%AB-01%E8%8E%B7%E5%8F%96%E7%BD%91%E9%A1%B5%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8F%8A%E9%80%89%E6%8B%A9%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9/index.html">
 <meta property="og:site_name" content="随风而行的个人博客">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="摘要：利用urlopen来获取网页源代码，以及用regex正则表达式这种原始的方法来提取网页内容。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/02/18/%E7%88%AC%E8%99%AB-01%E8%8E%B7%E5%8F%96%E7%BD%91%E9%A1%B5%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8F%8A%E9%80%89%E6%8B%A9%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9/1582003939736.png">
+<meta property="article:published_time" content="2020-02-18T05:26:26.000Z">
+<meta property="article:modified_time" content="2020-02-18T05:33:42.708Z">
 <meta property="article:author" content="随风而行">
-<meta property="article:tag" content="前端博客，后端博客，java">
-<meta property="article:tag" content="vue.js">
-<meta property="article:tag" content="jquery">
-<meta property="article:tag" content="html5">
-<meta property="article:tag" content="springboot">
-<meta property="article:tag" content="springcloud">
+<meta property="article:tag" content="urlopen">
+<meta property="article:tag" content="regex">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/02/18/%E7%88%AC%E8%99%AB-01%E8%8E%B7%E5%8F%96%E7%BD%91%E9%A1%B5%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8F%8A%E9%80%89%E6%8B%A9%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9/1582003939736.png">
   
     <link rel="alternative" href="/atom.xml" title="随风而行的个人博客" type="application/atom+xml">
   
@@ -216,586 +216,241 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-爬虫-01获取网页源代码及选择网页内容" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      爬虫_01获取网页源代码及选择网页内容
+    </h1>
+  
+
+        
+        
+<a href="/2020/02/18/%E7%88%AC%E8%99%AB-01%E8%8E%B7%E5%8F%96%E7%BD%91%E9%A1%B5%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8F%8A%E9%80%89%E6%8B%A9%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9/" class="archive-article-date">
+  	<time datetime="2020-02-18T05:26:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要：利用urlopen来获取网页源代码，以及用regex正则表达式这种原始的方法来提取网页内容。</p>
+<a id="more"></a>
+
+<ul>
+<li><p>1.用urlopen获取网页的html内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from urllib.request import urlopen</span><br><span class="line"># if has Chinese, apply decode()</span><br><span class="line">html &#x3D; urlopen(</span><br><span class="line">    &quot;https:&#x2F;&#x2F;vip.stock.finance.sina.com.cn&#x2F;corp&#x2F;view&#x2F;vCB_AllNewsStock.php?symbol&#x3D;sh601318&amp;Page&#x3D;1&quot;</span><br><span class="line">).read().decode(&#39;gb2312&#39;) </span><br><span class="line"># print(html)</span><br></pre></td></tr></table></figure>
+
+<p>decode后面的编码根据网页源码中的编码来决定，例如</p>
+<p><img src="/2020/02/18/%E7%88%AC%E8%99%AB-01%E8%8E%B7%E5%8F%96%E7%BD%91%E9%A1%B5%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8F%8A%E9%80%89%E6%8B%A9%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9/1582003939736.png" alt="1582003939736"></p>
+</li>
+<li><p>2.利用re模块来进行网页内容提取：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">res &#x3D; re.findall(r&quot;&lt;title&gt;(.+?)&lt;&#x2F;title&gt;&quot;, html)</span><br><span class="line">print(&quot;\nPage title is: &quot;, res[0])</span><br></pre></td></tr></table></figure>
+
+<p>结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Page title is:  中国平安(601318)个股资讯_新浪财经_新浪网</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/17/yilia%E4%B8%BB%E9%A2%98%E7%BF%BB%E9%A1%B5%E6%98%BE%E7%A4%BA%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80/" class="archive-article-date">
-  	<time datetime="2020-02-17T13:30:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/yilia%E4%B8%BB%E9%A2%98%E7%BF%BB%E9%A1%B5%E6%98%BE%E7%A4%BA%E5%89%8D%E8%BF%9B%E5%90%8E%E9%80%80/">yilia主题翻页显示前进后退</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">urlopen</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">regex</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客//" class="article-tag-list-link color5">个人博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客/yilia//" class="article-tag-list-link color1">yilia</a>
+        			<a href="/categories/爬虫//" class="article-tag-list-link color3">爬虫</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://wkzqn.github.io/2020/02/18/%E7%88%AC%E8%99%AB-01%E8%8E%B7%E5%8F%96%E7%BD%91%E9%A1%B5%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8F%8A%E9%80%89%E6%8B%A9%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/17/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8A%9F%E8%83%BD/" class="archive-article-date">
-  	<time datetime="2020-02-17T08:59:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/18/pycharm%E4%BF%AE%E6%94%B9github%E6%88%96coding%E7%9A%84%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">pycharm修改github或coding的账号密码</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8A%9F%E8%83%BD/">yilia主题添加分类功能</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客//" class="article-tag-list-link color5">个人博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客/yilia//" class="article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/17/hexo%E4%BC%98%E5%8C%96%E7%BD%91%E9%A1%B5%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6/" class="archive-article-date">
-  	<time datetime="2020-02-17T05:59:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/hexo%E4%BC%98%E5%8C%96%E7%BD%91%E9%A1%B5%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6/">hexo优化网页加载速度</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客//" class="article-tag-list-link color5">个人博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客/hexo//" class="article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-02-16T07:27:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">yilia主题常用配置</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客//" class="article-tag-list-link color5">个人博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客/yilia//" class="article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/16/hexo+yilia%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81%E5%9D%97%E5%A4%8D%E8%AF%95%E5%8A%9F%E8%83%BD/" class="archive-article-date">
-  	<time datetime="2020-02-16T07:00:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/hexo+yilia%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81%E5%9D%97%E5%A4%8D%E8%AF%95%E5%8A%9F%E8%83%BD/">hexo+yilia实现代码块复试功能</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客//" class="article-tag-list-link color5">个人博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客/yilia//" class="article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E5%A4%A9%E6%B0%94%E6%8F%92%E4%BB%B6/" class="archive-article-date">
-  	<time datetime="2020-02-16T06:31:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E5%A4%A9%E6%B0%94%E6%8F%92%E4%BB%B6/">yilia主题添加天气插件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心知天气</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客//" class="article-tag-list-link color5">个人博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客/yilia//" class="article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0utteranc%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
-  	<time datetime="2020-02-16T06:09:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0utteranc%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">yilia主题添加utteranc评论系统</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">utteranc</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客//" class="article-tag-list-link color5">个人博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客/yilia//" class="article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/16/typora%E7%BC%96%E5%86%99hexo%E5%8D%9A%E5%AE%A2%E6%97%B6%E7%9A%84%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" class="archive-article-date">
-  	<time datetime="2020-02-16T05:45:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/16/typora%E7%BC%96%E5%86%99hexo%E5%8D%9A%E5%AE%A2%E6%97%B6%E7%9A%84%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/">typora编写hexo博客时的图片显示</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">typora</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客//" class="article-tag-list-link color5">个人博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客/hexo//" class="article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/15/%E5%88%A9%E7%94%A8hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" class="archive-article-date">
-  	<time datetime="2020-02-15T12:56:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/15/%E5%88%A9%E7%94%A8hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">利用hexo+github搭建个人博客网站</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客//" class="article-tag-list-link color5">个人博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客/hexo//" class="article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/14/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-14T08:04:46.917Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客//" class="article-tag-list-link color5">个人博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/个人博客/hexo//" class="article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+
+
+
+
+<!-- 《utteranc评论：基于github issue的评论系统 -->
+
+	
+		<section id="comments" class="comments">
+		  <style>
+			.utterances{max-width: 100%;}
+		  </style>
+			<script src="https://utteranc.es/client.js"
+					repo="wkzqn/wkzqn.github.io"
+					issue-term="title"
+					theme="github-light"
+					crossorigin="anonymous"
+					async>
+			</script>
+	  </section>
+	
+
+<!-- utteranc评论》 -->
+
 
 
           </div>
@@ -818,10 +473,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
