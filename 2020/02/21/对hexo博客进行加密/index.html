@@ -16,7 +16,7 @@
 <meta property="og:description" content="摘要：对hexo的个人博客进行加密，对任意主题都适用。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-21T13:52:51.000Z">
-<meta property="article:modified_time" content="2020-02-22T10:21:40.124Z">
+<meta property="article:modified_time" content="2020-02-22T12:05:38.923Z">
 <meta property="article:author" content="随风而行">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -252,8 +252,11 @@
 <li><p>注意事项：</p>
 <p>开启hexo-blog-encrypt之后，在部分博客中, 解密后部分元素可能无法正常显示或者表现。已知问题：无法显示代码块的复制功能。</p>
 </li>
+<li><p>存在问题：</p>
+<p>这个插件存在输入密码按Enter键无反应的情况。</p>
+</li>
 </ul>
-<h2 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h2><ul>
+<h2 id="方式二（推荐）"><a href="#方式二（推荐）" class="headerlink" title="方式二（推荐）"></a>方式二（推荐）</h2><ul>
 <li><p>采用第三方插件<a href="https://github.com/edolphin-ydf/hexo-encrypt" target="_blank" rel="noopener">hexo-encrypt</a></p>
 </li>
 <li><p>安装</p>
@@ -268,6 +271,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">date: 2016-03-30 21:18:02</span><br><span class="line">encrypt: true</span><br><span class="line">enc_pwd: 123456</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
 <p>最后<code>hexo cl</code>再<code>hexo g</code>和<code>hexo d</code>。</p>
+</li>
+<li><p>自定义密码错误提示：</p>
+<p>找到\blog\node_modules\hexo-encrypt\lib\conf_post.js，找到这一段代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(&quot;enc_error&quot;).innerHTML &#x3D; &quot;password error!&quot;\n&#39; +</span><br></pre></td></tr></table></figure>
+
+<p>替换password error!即可。</p>
 </li>
 </ul>
 
@@ -432,7 +441,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#方式一"><span class="toc-number">1.</span> <span class="toc-text">方式一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方式二"><span class="toc-number">2.</span> <span class="toc-text">方式二</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#方式一"><span class="toc-number">1.</span> <span class="toc-text">方式一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方式二（推荐）"><span class="toc-number">2.</span> <span class="toc-text">方式二（推荐）</span></a></li></ol>
                     </div>
                 </span>
             </div>
