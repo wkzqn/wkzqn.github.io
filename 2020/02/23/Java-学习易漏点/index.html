@@ -18,7 +18,7 @@
 <meta property="og:description" content="摘要：总结一些学习过程的易漏点。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-23T08:48:00.000Z">
-<meta property="article:modified_time" content="2020-02-24T12:44:08.047Z">
+<meta property="article:modified_time" content="2020-02-25T12:44:39.944Z">
 <meta property="article:author" content="随风而行">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -277,7 +277,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">252字</span>
+      <span class="post-count">529字</span>
     </span>
   </span>
 
@@ -322,6 +322,44 @@
 <li><p>接口</p>
 <ul>
 <li>当类实现接口的时候，类要实现接口中所有的方法。否则，类必须声明为抽象的类。 </li>
+</ul>
+</li>
+<li><p>包的命名</p>
+<ul>
+<li>通常使用小写的字母来命名避免与类、接口名字的冲突。</li>
+</ul>
+</li>
+<li><p>Vector 类</p>
+<ul>
+<li>类似于python中的list，与ArrayList类似，但Vector类是线程同步的，ArrayList类是线程不同步的。</li>
+</ul>
+</li>
+<li><p>Dictionary 类</p>
+<ul>
+<li>Dictionary 类已经过时，在实际使用中可以通过实现Map 接口的方法来使用类似python的dict。</li>
+</ul>
+</li>
+<li><p>HashMap和HashTable的区别</p>
+<ul>
+<li>HashMap是线程不安全的，HashTable是线程安全的。</li>
+<li>HashMap效率高，HashTable效率低。</li>
+<li>当不需要线程安全时用HashMap，需要线程安全时用ConcurrentHashMap（其效率也比HashTable高），HashTable基本上已经被淘汰了。</li>
+</ul>
+</li>
+<li><p>Enumeration类</p>
+<ul>
+<li>已被迭代器取代。</li>
+</ul>
+</li>
+<li><p>Set和List的区别</p>
+<ul>
+<li>Set检索效率低下，删除和插入效率高，插入和删除不会引起元素位置改变。</li>
+<li>List和数组类似，可以动态增长，查找元素效率高，插入和删除效率低，因为会引起其他元素位置改变。</li>
+</ul>
+</li>
+<li><p>集合</p>
+<ul>
+<li>任何对象加入集合类后，自动转变为Object类型，所以在取出的时候，需要进行强制类型转换。 </li>
 </ul>
 </li>
 </ol>
